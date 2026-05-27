@@ -1,8 +1,9 @@
-# Hi there 👋
+# Hi👋
 
 ## About Me
+QA-стажер увлечен исследовательским тестированием и поиском ошибок.
 
-QA Intern passionate about exploratory testing and bug hunting.
+QA-Intern passionate about exploratory testing and bug hunting.
 
 ## Skills
 - Manual Testing
@@ -11,8 +12,7 @@ QA Intern passionate about exploratory testing and bug hunting.
 - Git & GitHub
 
 ## Projects
-- Donetick exploratory testing
-- React frontend bug investigation
+- Ислледование сервиса Donetick/ Donetick exploratory testing
 
 ## My Test Documentation
 - Bug Reports
