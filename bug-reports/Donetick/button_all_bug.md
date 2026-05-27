@@ -18,3 +18,6 @@
 
 ### Screenshots
 
+![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%201.png)
+
+![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%202.png)
