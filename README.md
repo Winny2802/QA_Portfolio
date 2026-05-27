@@ -12,7 +12,7 @@ QA-Intern passionate about exploratory testing and bug hunting.
 - Git & GitHub
 
 ## Projects
-- Ислледование сервиса Donetick/ Donetick exploratory testing
+- Исcледование сервиса Donetick/ Donetick exploratory testing
 
 ## My Test Documentation
 - Bug Reports
