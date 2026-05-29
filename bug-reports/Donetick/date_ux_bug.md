@@ -15,3 +15,4 @@ UX отрисовывает сообщение об ошибке - введит�
 
 ### Screenshots
 
+![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/duedate%20bug.png)
