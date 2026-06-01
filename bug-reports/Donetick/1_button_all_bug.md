@@ -1,3 +1,5 @@
+> 30/05/2026
+
 ## Ошибка в работе кнопки "All"
 
 ### Summary 
@@ -8,16 +10,15 @@
 
 ### Steps:
 1. На главной странице в правом верхнем углу нажать на иконку квадрата
+
+![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%201.png)
+
 2. Нажать на кнопку "All" в появившемся функционале
+
+![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%202.png)
 
 ### Actual Result 
 Нажатие на кнопку "All" не приводит к ожидаемому результату
 
 ### Expected Result
 Происходит выбор всех существующих задач - напротив них появляются голубые галочки
-
-### Screenshots
-
-![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%201.png)
-
-![Header](https://github.com/Winny2802/QA_Portfolio/blob/main/assets/баг%20all%202.png)
