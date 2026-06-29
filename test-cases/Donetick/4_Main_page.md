@@ -1,8 +1,4 @@
->### TC-MainPage-1
-
-### Title
-
-Проверка функции Group by
+## TC-MainPage-1 - Проверка функции Group by
 
 ### Priority
 
@@ -15,6 +11,7 @@
 3. В разделе "Group by" поочередно применить фильтрацию "Smart", "Due Date", "Priority", "Labels"
 
 ### Expected Result
+
 При выборе "Smart" фильтрация происходит по оптимальному режиму (по дате и приоритету)
 
 При выборе "Due Date" - по установленным срокам, начиная с ближайших
@@ -23,11 +20,9 @@
 
 При выборе "Labels" - группировка по меткам
 
->### TC-MainPage-2
+---
 
-### Title
-
-Проверка функции Quick Filters
+## TC-MainPage-2 - Проверка функции Quick Filters
 
 ### Priority
 
@@ -48,11 +43,7 @@
 
 При выборе "Assigned to others" - задачи, назначенные другим
 
->### TC-MainPage-3
-
-### Title
-
-Проверка функции Create Filter
+## TC-MainPage-3 - Проверка функции Create Filter
 
 ### Priority
 
@@ -70,11 +61,9 @@
 
 До сохранения задачи видно Preview где предварительно показаны задачи с данным фильтром. После сохранения открывается главная страница. Слева в разделе Filters можно увидеть созданный фильтр и задачи, подходящие под него
 
->### TC-MainPage-4
+---
 
-### Title
-
-Проверка функции Switch to Compact View
+## TC-MainPage-4 - Проверка функции Switch to Compact View
 
 ### Priority
 
@@ -89,11 +78,9 @@
 ### Expected Result
 При нажатии на данную кнопку происходит смена формата списка задач - развернуто, сжато, с отметкой в календаре
 
->### TC-MainPage-5
+---
 
-### Title
-
-Проверка функции Enable Multi-select Mode
+## TC-MainPage-5 - Проверка функции Enable Multi-select Mode
 
 ### Priority
 
