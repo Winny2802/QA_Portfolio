@@ -1,0 +1,895 @@
+{
+  "info": {
+    "_postman_id": "dc98ffe2-77c3-46d4-b0b4-44ef466489ff",
+    "name": "Donetick",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50831856"
+  },
+  "item": [
+    {
+      "name": "Get all chores",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get archived chores",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores/archived",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            "archived"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chore by ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/:id",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "19223"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chore with a non-existent ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/99999999999999/details",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            "99999999999999",
+            "details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain;charset=UTF-8",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null,\"name\":\"Test Chore\",\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"once\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Daily Chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null,\"name\":\"Daily Chore\",\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"daily\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Weekly Chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null,\"name\":\"Weekly Chore\",\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"weekly\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore (empty name)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null,\"name\": \" \",\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"weekly\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore (no name)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null,\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"weekly\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore (name >500s)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null, \"name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"once\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":1,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore (priority <0)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null, \"name\":\"test task 2\", \"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"weekly\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":-100,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Chore (frequencyType not valid)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":null, \"name\":\"test task 3\", \"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"--------\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":null,\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":-100,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain;charset=UTF-8",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":18307,\"name\":\"помидорчик\",\"description\":\"\",\"assignees\":[],\"dueDate\":null,\"frequencyType\":\"once\",\"frequency\":1,\"frequencyMetadata\":{},\"assignedTo\":null,\"assignStrategy\":\"no_assignee\",\"isRolling\":false,\"isActive\":true,\"notification\":false,\"labels\":[],\"labelsV2\":[],\"subTasks\":[],\"notificationMetadata\":{},\"thingTrigger\":null,\"points\":null,\"requireApproval\":false,\"isPrivate\":false,\"completionWindow\":null,\"deadlineOffset\":null,\"priority\":0,\"projectId\":null}"
+        },
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores/",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores/:id",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "18307"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View a deleted chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/chores/:id",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "18307"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Complete Chore",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/chores/:id/do",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "chores",
+            ":id",
+            "do"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "18308"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checking the service status",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/health",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Getting a list of circles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/circles",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "circles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Getting the Labels list",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/labels",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "labels"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Label",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Regression\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{baseUrl}}/api/v1/labels",
+          "protocol": "https",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "labels"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Getting Things",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/things",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "things"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Thing",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"thing2\",\r\n  \"state\": \"5\",\r\n  \"type\": \"number\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.donetick.com/api/v1/things",
+          "protocol": "https",
+          "host": [
+            "api",
+            "donetick",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "things"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

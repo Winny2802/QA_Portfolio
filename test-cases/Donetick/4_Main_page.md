@@ -43,6 +43,8 @@
 
 При выборе "Assigned to others" - задачи, назначенные другим
 
+---
+
 ## TC-MainPage-3 - Проверка функции Create Filter
 
 ### Priority
